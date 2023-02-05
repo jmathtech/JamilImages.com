@@ -262,7 +262,13 @@ footer {
   nav ul {
     display: flex;
   }
-  
+
+  p {
+    margin: 50px;
+
+  }
+
+
 
 }
 
@@ -276,7 +282,7 @@ footer {
     display: flex;
     z-index: 1;
     margin-left: auto;
-    
+
   }
 
   nav ul {
@@ -287,12 +293,17 @@ footer {
     left: 0;
     background-color: rgb(245, 245, 245);
     width: 100%;
-    
+
   }
 
   nav ul li {
     padding: 15px;
-    
+
+  }
+
+  p {
+    margin: 50px;
+
   }
 
   .nav-menu {
@@ -304,16 +315,14 @@ footer {
   .nav-menu.active {
     display: flex;
     align-items: center;
-    margin: 0;
-    padding: 0;
-    
+
   }
 
   .hamburger-menu {
     display: block;
-    padding: 10px;
+    padding-right: 30px;
   }
-  
+
 
   section,
   footer {
