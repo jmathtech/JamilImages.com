@@ -1,5 +1,13 @@
 :root {
   --mainOpacity: rgba(0, 0, 0, 0.281);
+  --matteBlack: rgba(51, 51, 51);
+  --offWhite: rgba(245, 245, 245);
+  --yellow: rgba(212, 182, 13);
+  --spaceGray: rgba(115, 125, 150);
+  --lightGrey: rgba(221, 221, 221);
+  --golden: rgba(109, 89, 0, 0.767);
+  --bloodRed: rgba(109, 0, 0, 0.767);
+  --trueBlue: rgba(0, 60, 109, 0.767);
 }
 
 html,
@@ -15,15 +23,15 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--offWhite);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(212, 182, 13);
+  background: var(--yellow);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #333;
+  background: var(--matteBlack);
 }
 
 /* Logo */
@@ -46,8 +54,8 @@ body {
 header {
   display: flex;
   align-items: center;
-  background-color: rgb(245, 245, 245);
-  color: #333;
+  background-color: var(--offWhite);
+  color: var(--matteBlack);
   height: 80px;
   position: fixed;
   top: 0;
@@ -55,7 +63,7 @@ header {
   right: 0;
   width: 100%;
   z-index: 1;
-  box-shadow: 4px 2px 4px 2px rgb(51, 51, 51);
+  box-shadow: 4px 2px 4px 2px var(--matteBlack);
   transition: opacity 0.5s;
   margin-bottom: 10px;
 }
@@ -74,7 +82,7 @@ nav ul {
 }
 
 nav a {
-  color: #333;
+  color: var(--matteBlack);
   text-decoration: none;
   margin: 0 20px;
 }
@@ -95,7 +103,7 @@ nav a {
 
 .hamburger-menu {
   display: none;
-  background-color: rgb(245, 245, 245);
+  background-color: var(--offWhite);
   border: none;
   cursor: pointer;
   margin-left: auto;
@@ -105,7 +113,7 @@ nav a {
 .hamburger-menu .bar {
   height: 3px;
   width: 25px;
-  background-color: rgb(131, 131, 131);
+  background-color: var(--spaceGray);
   margin: 5px 0;
 
 }
@@ -123,14 +131,14 @@ a[href^="#"] {
   display: inline-block;
   padding: 10px 20px;
   background-color: rgb(236, 233, 233);
-  color: #333;
+  color: var(--matteBlack);
   text-decoration: none;
   transition: background-color 0.2s;
   border-radius: 10px 10px 10px 10px;
 }
 
 a[href^="#"]:hover {
-  background-color: rgb(197, 197, 197);
+  background-color: var(--lightGrey);
   border-radius: 10px 10px 10px 10px;
 }
 
@@ -170,8 +178,8 @@ a[href^="#"]:focus {
 /* Page Content  */
 #home {
   background-image: linear-gradient(60deg,
-      rgba(109, 89, 0, 0.767),
-      rgba(19, 19, 19, 0.938)),
+      var(--golden),
+      var(--matteBlack)),
     url(../img/bg1.jpg);
   background-size: cover;
   background-position: 0%, 70%;
@@ -188,8 +196,8 @@ a[href^="#"]:focus {
 
 #about {
   background-image: linear-gradient(60deg,
-      rgba(109, 0, 0, 0.767),
-      rgba(19, 19, 19, 0.938)), url(../img/bg2.jpg);
+      var(--bloodRed),
+      var(--matteBlack)), url(../img/bg2.jpg);
   background-size: cover;
   background-position: 0%, 70%;
   background-attachment: fixed;
@@ -205,8 +213,8 @@ a[href^="#"]:focus {
 
 #contact {
   background-image: linear-gradient(60deg,
-      rgba(0, 60, 109, 0.767),
-      rgba(19, 19, 19, 0.938)), url(../img/bg3.jpg);
+      var(--trueBlue),
+      var(--matteBlack)), url(../img/bg3.jpg);
   background-size: cover;
   background-position: 0%, 70%;
   background-attachment: fixed;
@@ -221,7 +229,7 @@ a[href^="#"]:focus {
 }
 
 .content {
-  color: rgb(243, 243, 243);
+  color: var(--offWhite);
   padding: 0;
   margin: 0;
   width: 100%;
@@ -231,8 +239,8 @@ a[href^="#"]:focus {
 
 /* Footer */
 footer {
-  background-color: rgb(245, 245, 245);
-  color: rgb(161, 161, 161);
+  background-color: var(--offWhite);
+  color: var(--spaceGray);
   height: 8vh;
   width: 100%;
   display: flex;
@@ -268,8 +276,6 @@ footer {
 
   }
 
-
-
 }
 
 @media only screen and (max-width: 969px) {
@@ -291,13 +297,15 @@ footer {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: rgb(245, 245, 245);
+    background-color: var(--offWhite);
     width: 100%;
+    box-shadow: 2px 1px 2px 1px var(--matteBlack);
 
   }
 
   nav ul li {
-    padding: 15px;
+    padding: 20px;
+    border-bottom: 1px dotted var(--lightGrey);
 
   }
 
