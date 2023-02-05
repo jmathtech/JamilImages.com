@@ -48,7 +48,7 @@ header {
   align-items: center;
   background-color: rgb(245, 245, 245);
   color: #333;
-  height: 100px;
+  height: 80px;
   position: fixed;
   top: 0;
   left: 0;
@@ -69,7 +69,7 @@ nav ul {
   list-style: none;
   display: flex;
   margin: 0;
-  padding: 40px;
+  padding: 50px;
   justify-content: flex-end;
 }
 
@@ -290,6 +290,11 @@ footer {
     
   }
 
+  nav ul li {
+    padding: 15px;
+    
+  }
+
   .nav-menu {
     display: none;
     align-items: center;
@@ -301,6 +306,7 @@ footer {
     align-items: center;
     margin: 0;
     padding: 0;
+    
   }
 
   .hamburger-menu {
