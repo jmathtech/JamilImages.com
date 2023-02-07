@@ -3,7 +3,8 @@
 
 <head>
   <title>Jamil Images - A Premier Photography Service</title>
-  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link rel="stylesheet" type="text/css" href="./css/styles.css">
+  <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -20,38 +21,71 @@
     <nav class="nav-menu">
       <ul>
         <li><a href="#home">Home</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#book-us">Book Us</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="https://jamilimages.pixieset.com" target="_blank">Gallery</a></li>
+        <li><a href="#book">Book Us</a></li>        
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
   <section id="home" class="section-home">
     <div class="content">
-      <h1 class="title">Premier Photography Service</h1>
+      <h1 class="title">Welcome To A Premier Photography Service</h1>
       <p>We specialize in capturing precious memories at special events such as birthday parties, and weddings and
-        provide professional headshots for businesses. Our experienced photographers create unique, personalized images
-        that perfectly capture the essence of your moments. Browse our portfolio and book your session today to create
-        lasting memories.</p>
+        provide professional headshots for businesses.
+        <br></br>
+        Our experienced photographers create unique, personalized images
+        that perfectly capture the essence of your moments.
+        <br></br>
+        Whether you're in need of photos for personal or commercial use, Jamil Images is dedicated to
+        delivering quality and capturing your vision.
+        <br></br>
+        Browse our portfolio and book your session today to create
+        lasting memories.
+        
+      </p>
     </div>
   </section>
   <section id="about" class="section-about">
     <div class="content">
       <h1 class="title">About</h1>
-      <p>Content goes here</p>
+      <p>Jamil Images, LLC was established by Jamil Matheny in June 2019.
+        <br></br>Jamil's passion for photography began in high school and has since expanded to include a wide range of
+        events and subjects.
+        <br></br>With a focus on capturing the essence of concerts, community events, businesses, and products, Jamil
+        has established a dynamic portfolio of stunning images.
+      </p>
+    </div>
+  </section>
+  <section id="book">
+    <div class="content">
+      <iframe src="https://app.acuityscheduling.com/schedule.php?owner=16942125" title="Schedule Appointment" width="100%" height="3024" frameBorder="0"></iframe>
     </div>
   </section>
   <section id="contact" class="section-contact">
     <div class="content">
       <h1 class="title">Contact</h1>
-      <p>Content goes here</p>
+      <p>
+        <form action="./mail/mail.php" class="contact-form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" placeholder="What's Your Message?" required></textarea>
+
+          <input type="submit" value="Submit">
+        </form>
+      </p>
     </div>
   </section>
   <footer>
-    <p> Copyright © 2023 Jamil Images, LLC. All Rights Reserved.</p>
+    <p> Copyright © 2023 Jamil Images, LLC. All Rights Reserved. Site designed by Jamil Matheny.</p>
   </footer>
   <script src="./js/hamburger-menu.js"></script>
+  <script src="./js/navclick.js"></script>
 </body>
 
 </html>
