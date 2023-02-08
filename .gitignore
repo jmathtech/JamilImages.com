@@ -1,0 +1,8 @@
+.env
+
+SMTP_HOST=smtp.dreamhost.com
+SMTP_AUTH=true
+SMTP_USERNAME=admin@jamilimages.com
+SMTP_PASSWORD=TheFlyEagles24!
+SMTP_SECURE=tls
+SMTP_PORT=587
