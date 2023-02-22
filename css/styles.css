@@ -2,11 +2,11 @@
   --mainOpacity: rgba(0, 0, 0, 0.199);
   --matteBlack: rgba(51, 51, 51);
   --offWhite: rgba(245, 245, 245);
-  --yellow: rgba(212, 182, 13);
+  --yellow: rgba(211, 180, 5, 0.774);
   --spaceGray: rgba(115, 125, 150);
   --lightGrey: rgba(221, 221, 221);
-  --golden: rgba(109, 89, 0, 0.767);
-  --bloodRed: rgba(109, 0, 0, 0.767);
+  --golden: rgba(199, 164, 7, 0.589);
+  --bloodRed: rgba(187, 2, 2, 0.514);
   --trueBlue: rgba(0, 60, 109, 0.767);
   --silver: rgba(236, 233, 233);
 }
@@ -14,8 +14,8 @@
 html,
 body {
   margin: 0;
-  padding: 0;
   font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
 }
 
 /* webkit - scrollbar */
@@ -57,16 +57,16 @@ header {
   align-items: center;
   background-color: var(--offWhite);
   color: var(--matteBlack);
-  height: 70px;
+  height: 90px;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
   z-index: 1;
-  box-shadow: 6px 6px 6px 6px var(--mainOpacity);
+  box-shadow: 4px 4px 4px 4px var(--mainOpacity);
   transition: opacity 0.5s;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   opacity: 0;
   animation: fadeIn 2s forwards;
 }
@@ -181,7 +181,11 @@ a[href^="#"]:hover {
   opacity: 0;
   transform: translateY(20px);
   animation: fade-in 3.5s ease-out forwards;
+  padding: 0;
+  margin: 0;
+  width: 100%;
 }
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -216,12 +220,12 @@ a[href^="#"]:hover {
   }
 }
 
-a[href^="#"]:focus {
-  animation: smoothScroll 0.5s ease-in-out forwards;
-}
-
 /* Page Content  */
 
+#home-content {
+  text-align: right;
+
+}
 
 .content {
   color: var(--offWhite);
@@ -233,14 +237,14 @@ a[href^="#"]:focus {
 }
 
 #home {
-  background-image: linear-gradient(60deg,
+  background-image: linear-gradient(30deg,
       var(--golden),
       var(--matteBlack)),
     url(../img/bg1.jpg);
   background-size: cover;
-  background-position: 0%, 70%;
+  background-position: 0%, 40%;
   background-attachment: fixed;
-  height: 100vh;
+  height: 125vh;
   width: 100%;
   background-repeat: no-repeat;
   opacity: var(--mainOpacity);
@@ -256,10 +260,10 @@ a[href^="#"]:focus {
       var(--bloodRed),
       var(--matteBlack)), url(../img/bg2.jpg);
   background-size: cover;
-  background-position: 0%, 70%;
+  background-position: 0%, 40%;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 125vh;
   width: 100%;
   opacity: var(--mainOpacity);
 }
@@ -277,13 +281,13 @@ a[href^="#"]:focus {
   background-position: 0%, 30%;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 125vh;
   width: 100%;
   opacity: var(--mainOpacity);
 }
 
 
-/* Contact Form */ 
+/* Contact Form */
 #contact h1 {
   font-size: 40px;
 }
@@ -304,7 +308,8 @@ a[href^="#"]:focus {
   font-weight: bold;
 }
 
-.contact-form input, .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
   width: 100%;
   padding: 5px;
   margin-bottom: 20px;
@@ -326,6 +331,31 @@ a[href^="#"]:focus {
 .contact-form input[type="submit"]:hover {
   background-color: var(--golden);
 }
+
+/* Back to Top */
+
+#back-to-top-btn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--bloodRed);
+  color: var(--offWhite);
+  padding: 1px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 30px;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  animation: fadeIn 2s forwards;
+
+}
+
+#back-to-top-btn:hover {
+  opacity: 1;
+  animation: smoothScroll 0.5s ease-in-out forwards;
+}
+
 
 
 /* Footer */
@@ -421,9 +451,156 @@ footer {
     padding-right: 30px;
   }
 
-  section,
-  footer {
-    width: 100%;
-    margin: 0 auto;
+}
+
+.hamburger-menu .bar {
+  height: 2px;
+  width: 20px;
+  background-color: var(--spaceGray);
+  margin: 5px 0;
+  transition: all 0.3s ease;
+
+}
+
+.hamburger-menu.active .bar:first-of-type {
+  transform: rotate(45deg);
+  transform-origin: top left;
+}
+
+.hamburger-menu.active .bar:last-of-type {
+  transform: rotate(-45deg);
+  transform-origin: bottom left;
+}
+
+.hamburger-menu.active .bar:not(:first-of-type):not(:last-of-type) {
+  opacity: 0;
+}
+
+/* Back to Top */
+
+#back-to-top-btn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--bloodRed);
+  color: var(--offWhite);
+  padding: 1px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 30px;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  animation: fadeIn 2s forwards;
+
+}
+
+#back-to-top-btn:hover {
+  opacity: 1;
+  animation: smoothScroll 0.5s ease-in-out forwards;
+}
+
+
+section,
+footer {
+  width: 100%;
+  margin: 0 auto;
+
+}
+
+@media only screen 
+and (max-device-width: 184px) 
+and (max-device-height: 224px) 
+and (-webkit-device-pixel-ratio: 2) {
+
+  /* Your CSS styles for Apple Watch display here */
+
+  :root {
+    --mainOpacity: rgba(0, 0, 0, 0.199);
+    --matteBlack: rgba(51, 51, 51);
+    --offWhite: rgba(245, 245, 245);
+    --yellow: rgba(211, 180, 5, 0.774);
+    --spaceGray: rgba(115, 125, 150);
+    --lightGrey: rgba(221, 221, 221);
+    --golden: rgba(199, 164, 7, 0.589);
+    --bloodRed: rgba(187, 2, 2, 0.514);
+    --trueBlue: rgba(0, 60, 109, 0.767);
+    --silver: rgba(236, 233, 233);
   }
+
+  header {
+    display: flex;
+    position: fixed;
+  }
+
+  nav {
+    display: flex;
+    z-index: 1;
+    margin-left: auto;
+
+  }
+
+  nav ul {
+    display: block;
+    align-items: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--offWhite);
+    width: 100%;
+
+  }
+
+  nav ul li {
+    padding: 20px;
+    border-bottom: 1px dotted var(--lightGrey);
+
+  }
+
+  p {
+    margin: 30px;
+
+  }
+
+  .nav-menu {
+    display: none;
+    align-items: center;
+
+  }
+
+  .nav-menu.active {
+    display: flex;
+    align-items: center;
+    animation: fadeIn 0.2s ease-in-out forwards;
+
+  }
+
+  .hamburger-menu {
+    display: block;
+    padding-right: 30px;
+  }
+
+}
+
+.hamburger-menu .bar {
+  height: 2px;
+  width: 20px;
+  background-color: var(--spaceGray);
+  margin: 5px 0;
+  transition: all 0.3s ease;
+
+}
+
+.hamburger-menu.active .bar:first-of-type {
+  transform: rotate(45deg);
+  transform-origin: top left;
+}
+
+.hamburger-menu.active .bar:last-of-type {
+  transform: rotate(-45deg);
+  transform-origin: bottom left;
+}
+
+.hamburger-menu.active .bar:not(:first-of-type):not(:last-of-type) {
+  opacity: 0;
 }
