@@ -2,12 +2,13 @@
   --mainOpacity: rgba(0, 0, 0, 0.199);
   --matteBlack: rgba(51, 51, 51);
   --offWhite: rgba(245, 245, 245);
-  --yellow: rgba(243, 221, 95, 0.568);
+  --yellow: rgba(124, 112, 46, 0.63);
   --spaceGray: rgb(115, 125, 150);
   --touchOfGrey: rgba(115, 124, 150, 0.795);
   --lightGrey: rgba(221, 221, 221);
-  --golden: rgba(199, 164, 7, 0.589);
-  --bloodRed: rgba(187, 2, 2, 0.664);
+  --golden: rgb(167, 142, 15);
+  --bloodRed: rgb(187, 2, 2);
+  --darkRed: rgba(104, 8, 8, 0.719);
   --trueBlue: rgba(0, 60, 109, 0.767);
   --greenForest: rgba(65, 214, 152, 0.575);
   --silver: rgba(236, 233, 233);
@@ -16,10 +17,12 @@
 html,
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 18px;
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* webkit - scrollbar */
@@ -44,12 +47,12 @@ body {
 .logo {
   margin-right: auto;
   padding: 20px;
-  width: 170px;
-  height: 30px;
+  width: auto;
+  height: auto;
 }
 
 .logo:hover {
-  opacity: 0.5;
+  opacity: 0.8;
   transition: all 1s ease-in-out;
 }
 
@@ -61,7 +64,7 @@ header {
   align-items: center;
   background-color: var(--offWhite);
   color: var(--matteBlack);
-  height: 65px;
+  height: 7vh;
   position: fixed;
   top: 0;
   left: 0;
@@ -74,7 +77,8 @@ header {
   opacity: 0;
   animation: fadeIn 2s forwards;
   max-width: 100%;
-  margin: 0 auto; /* center the content */
+  margin: 0 auto;
+  /* center the content */
 }
 
 nav {
@@ -86,7 +90,7 @@ nav ul {
   list-style: none;
   display: flex;
   margin: 0;
-  padding: 50px;
+  padding: 10px;
   justify-content: flex-end;
 }
 
@@ -144,12 +148,11 @@ nav a {
 
 section {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 0;
   max-width: 100%;
-  margin: 0 auto; /* center the content */
+  margin: 0 auto;
+
+  /* center the content */
 }
 
 a[href^="https"] {
@@ -182,16 +185,16 @@ a[href^="#"]:hover {
 /* Animation  */
 #neonLight {
   color: var(--offWhite);
-  animation: flicker 1.5s infinite alternate; 
+  animation: flicker 1.5s infinite alternate;
   text-shadow:
-      0 0 7px var(--offWhite),
-      0 0 10px var(--offWhite),
-      0 0 21px var(--offWhite),
-      0 0 42px var(--silver),
-      0 0 82px var(--silver),
-      0 0 92px var(--silver),
-      0 0 102px var(--silver),
-      0 0 151px var(--silver);
+    0 0 7px var(--offWhite),
+    0 0 10px var(--offWhite),
+    0 0 21px var(--offWhite),
+    0 0 42px var(--silver),
+    0 0 82px var(--silver),
+    0 0 92px var(--silver),
+    0 0 102px var(--silver),
+    0 0 151px var(--silver);
 }
 
 
@@ -209,10 +212,16 @@ a[href^="#"]:hover {
 
 /* Flickering animation */
 @keyframes flicker {
-    
-  0%, 18%, 22%, 25%, 53%, 57%, 100% {
 
-      text-shadow:
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+
+    text-shadow:
       0 0 4px var(--offWhite),
       0 0 11px var(--offWhite),
       0 0 19px var(--offWhite),
@@ -222,14 +231,16 @@ a[href^="#"]:hover {
       0 0 100px var(--silver),
       0 0 150px var(--silver);
 
-      opacity: .99;
-  
+    opacity: .99;
+
   }
-  
-  20%, 24%, 55% {        
-      text-shadow: none;
-      opacity: 0.3;
-  }    
+
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+    opacity: 0.3;
+  }
 }
 
 @keyframes fadeIn {
@@ -269,29 +280,41 @@ a[href^="#"]:hover {
 /* Page Content  */
 
 .red-button {
-  background-color: var(--bloodRed); /* Blood red color */
+  background-color: var(--bloodRed);
+  /* Blood red color */
   border: 0px;
-  border-radius: 5px; /* Rounded corners */
-  color: #ffffff; /* White text color */
-  padding: 10px 20px; /* Padding */
-  font-size: 16px; /* Font size */
-  cursor: pointer; /* Cursor style */
+  border-radius: 5px;
+  /* Rounded corners */
+  color: #ffffff;
+  /* White text color */
+  padding: 10px 10px;
+  /* Padding */
+  font-size: 16px;
+  /* Font size */
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  /* Cursor style */
   text-shadow: 2px 2px 2px var(--matteBlack);
-  position: sticky; /* Position the button absolutely */
-  top: 75%; /* Position the button 50% from the top */
-  right: 27%; /* Position the button flush with the right edge of the page */
-  animation: fadeIn 1s ease-in-out;
+  margin: -12px;
+  position: sticky;
+  /* Position the button absolutely */
+  top: 75%;
+  /* Position the button 50% from the top */
+  right: 27%;
+  /* Position the button flush with the right edge of the page */
   box-shadow: 2px 2px 2px var(--matteBlack);
+
 
 }
 
-.red-button:hover{
+.red-button:hover {
   background-color: var(--golden);
   border: 0px;
   border-radius: 5px;
   color: #ffffff;
-  animation: smoothScroll 0.5s ease-in-out forwards;
-  
+
+
 }
 
 #home-content {
@@ -302,22 +325,31 @@ a[href^="#"]:hover {
 .content {
   color: var(--offWhite);
   padding: 0;
-  margin: 0;
   width: 100%;
   text-align: left;
   text-shadow: 10px 10px 10px var(--matteBlack);
   flex: 1;
-  max-width: 100%;
-  margin: 0 auto; /* center the content */
-  
+  margin: 0 auto;
+  /* center the content */
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 
-.img-media img{
-  border-radius: 15%;
+.img-media img {
+  border-radius: 20%;
   height: auto;
-  align-items: left;
+  align-items: center;
   margin: 0 auto;
+  box-shadow: 3px 3px 3px 3px var(--mainOpacity);
 }
+
+.img-media img:hover {
+  opacity: 0.5;
+  transition: all 1s ease-in-out;
+}
+
 
 #home {
   background-image: linear-gradient(50deg,
@@ -327,30 +359,32 @@ a[href^="#"]:hover {
   background-size: cover;
   background-position: 0%, 40%;
   background-attachment: fixed;
-  height: 105vh;
+  height: 100vh;
   width: 100%;
   background-repeat: no-repeat;
   opacity: var(--mainOpacity);
+  padding-top: 15%;
+
 }
 
 #home h1 {
   font-size: 40px;
-  
+
 }
-
-
 
 #about {
   background-image: linear-gradient(60deg,
-      var(--bloodRed),
+      var(--darkRed),
       var(--matteBlack)), url(../img/bg2.jpg);
   background-size: cover;
-  background-position: 0%, 70%;
+  background-position: 0%, 40%;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  height: 150vh;
+  height: 100%;
   width: 100%;
   opacity: var(--mainOpacity);
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 #about h1 {
@@ -360,15 +394,17 @@ a[href^="#"]:hover {
 
 #faq {
   background-image: linear-gradient(60deg,
-  var(--touchOfGrey),
-  var(--matteBlack)), url(../img/bg4.jpg);
+      var(--touchOfGrey),
+      var(--matteBlack)), url(../img/bg4.jpg);
   background-size: cover;
   background-position: 0%, 50%;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  height: 105vh;
+  height: 100%;
   width: 100%;
   opacity: var(--mainOpacity);
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 #faq h1 {
@@ -376,16 +412,10 @@ a[href^="#"]:hover {
 }
 
 #contact {
-  background-image: linear-gradient(60deg,
-      var(--trueBlue),
-      var(--matteBlack)), url(../img/bg3.jpg);
-  background-size: cover;
-  background-position: 0%, 30%;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  height: 105vh;
+
   width: 100%;
   opacity: var(--mainOpacity);
+
 }
 
 /* Back to Top */
@@ -413,164 +443,126 @@ a[href^="#"]:hover {
 }
 
 
+/* Cookies banner */
+
+.cookies-eu-banner {
+  background: var(--matteBlack);
+  color: var(--offWhite);
+  padding: 15px;
+  font-size: 13px;
+  text-align: left;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 100%;
+  z-index: 10;
+  animation: fadeIn 2s forwards;
+  border-radius: 10px 10px 10px 10px;
+}
+
+
+.cookies-eu-banner button {
+  text-decoration: none;
+  background: var(--bloodRed);
+  color: var(--offWhite);
+  border: 1px solid var(--matteBlack);
+  border-radius: 6px 6px 6px 6px;
+  cursor: pointer;
+  padding: 10px 10px;
+  margin: 2px 0;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background 0.07s, color 0.07s, border-color 0.07s;
+}
+
+.cookies-eu-banner button:hover {
+  background: var(--touchOfGrey);
+  color: var(--offWhite);
+}
+
+.hidden {
+  display: none;
+}
 
 /* Footer */
-.footer-distributed{
-	background: var(--offWhite);
-	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
-	box-sizing: border-box;
-	width: 100%;
-	text-align: left;
-	font: bold 16px sans-serif;
-	padding: 55px 50px;
+
+.site-footer {
+  background-color: #26272b;
+  padding: 45px 0 20px;
+  font-size: 15px;
+  line-height: 24px;
+  color: #737373;
 }
 
-.footer-distributed .footer-left,
-.footer-distributed .footer-center,
-.footer-distributed .footer-right{
-	display: inline-block;
-	vertical-align: top;
+.site-footer hr {
+  border-top-color: #bbb;
+  opacity: 0.5
 }
 
-/* Footer left */
-
-.footer-distributed .footer-left{
-	width: 40%;
+.site-footer hr.small {
+  margin: 20px 0
 }
 
-/* The company logo */
-
-.footer-distributed h3{
-	color:  #9b9b9b;
-	font: normal 36px 'Open Sans', cursive;
-	margin: 0;
+.site-footer h6 {
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  letter-spacing: 2px
 }
 
-.footer-distributed h3 span{
-	color:  rgb(212, 200, 24);
+.site-footer a {
+  color: #737373;
 }
 
-/* Footer links */
-
-.footer-distributed .footer-links{
-	color:  var(--spaceGray);
-	margin: 20px 0 12px;
-	padding: 0;
-  transition: color 1s;
+.site-footer a:hover {
+  color: #3366cc;
+  text-decoration: none;
 }
 
-.footer-distributed .footer-links a{
-	display:inline-block;
-	line-height: 1.8;
-  font-weight:400;
-	text-decoration: none;
-	color: var(--spaceGray);
-  
+.footer-links {
+  padding-left: 0;
+  list-style: none
 }
 
-.footer-distributed .footer-links a:hover{
-  color: var(--lightGrey);
+.footer-links li {
+  display: block
 }
 
-.footer-distributed .footer-company-name{
-	color:  #222;
-	font-size: 14px;
-	font-weight: normal;
-	margin: 0;
+.footer-links a {
+  color: #737373
 }
 
-/* Footer Center */
-
-.footer-distributed .footer-center{
-	width: 35%;
+.footer-links a:active,
+.footer-links a:focus,
+.footer-links a:hover {
+  color: #3366cc;
+  text-decoration: none;
 }
 
-.footer-distributed .footer-center i{
-	background-color:  #33383b;
-	color: #8d8d8d;
-	font-size: 25px;
-	width: 38px;
-	height: 38px;
-	border-radius: 50%;
-	text-align: center;
-	line-height: 42px;
-	margin: 10px 15px;
-	vertical-align: middle;
+.footer-links.inline li {
+  display: inline-block
 }
 
-.footer-distributed .footer-center i.fa-envelope{
-	font-size: 17px;
-	line-height: 38px;
+.site-footer .social-icons {
+  text-align: right
 }
 
-.footer-distributed .footer-center p{
-	display: inline-block;
-	color: #7c7c7c;
-  font-weight:400;
-	vertical-align: middle;
-	margin:0;
+.site-footer .social-icons a {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  margin-left: 6px;
+  margin-right: 0;
+  border-radius: 100%;
+  background-color: #33353d
 }
 
-.footer-distributed .footer-center p span{
-	display:block;
-	font-weight: normal;
-	font-size:14px;
-	line-height:2;
+.copyright-text {
+  margin: 0
 }
 
-.footer-distributed .footer-center p a{
-	color:  var(--golden);
-	text-decoration: none;
-  transition: color 1s;
-}
 
-.footer-distributed .footer-links a:before {
-  content: "|";
-  font-weight:300;
-  font-size: 20px;
-  left: 0;
-  color: var(--spaceGray);
-  display: inline-block;
-  padding-right: 5px;
-}
-
-.footer-distributed .footer-links .link-1:before {
-  content: none;
-}
-
-/* Footer Right */
-
-.footer-distributed .footer-right{
-	width: 20%;
-}
-
-.footer-distributed .footer-icons{
-	margin-top: 25px;
-}
-
-.footer-distributed .footer-icons a{
-	display: inline-block;
-	width: 35px;
-	height: 35px;
-	cursor: pointer;
-	background-color:  #33383b;
-	border-radius: 2px;
-
-	font-size: 20px;
-	color: #ffffff;
-	text-align: center;
-	line-height: 35px;
-
-	margin-right: 3px;
-	margin-bottom: 5px;
-  
-}
-
-.footer-distributed .footer-icons a:hover {
-  background-color:  var(--spaceGray);
-  color: var(--offWhite);
-  
-}
 
 /* If you don't want the footer to be responsive, remove these media queries */
 /* Media Screens for Responsiveness */
@@ -601,12 +593,20 @@ a[href^="#"]:hover {
     margin: 50px;
 
   }
+
+
 }
 
-@media only screen and (max-width: 820px) {
+@media only screen and (min-width: 240px) and (max-width: 888px) {
   header {
     display: flex;
-    
+    height: auto;
+
+  }
+
+  body {
+
+    font-size: 18px;
   }
 
   nav {
@@ -634,20 +634,27 @@ a[href^="#"]:hover {
   }
 
   p {
-    margin: 30px;
+    margin: 20px;
 
+  }
+
+  .red-button {
+    font-size: large;
+    margin: -12px;
   }
 
   .img-media img {
     width: 100%;
     height: auto;
-    
+
+
   }
 
   #home {
-    background-position: 0%, 50%;
-    height: auto;
-    padding-top: 30%;
+    height: 70vh;
+    padding-top: 50%;
+    padding-bottom: 50%;
+
   }
 
   #about {
@@ -662,7 +669,7 @@ a[href^="#"]:hover {
     display: block;
     padding-top: 30%;
     padding-bottom: 50%;
-  
+
   }
 
 
@@ -683,11 +690,6 @@ a[href^="#"]:hover {
     display: block;
     padding-right: 30px;
   }
-
-}
-
-content {
-  height: 175vh;
 
 }
 
@@ -714,6 +716,19 @@ content {
   opacity: 0;
 }
 
+.cookies-eu-banner {
+
+  width: auto;
+  max-width: 100%;
+
+}
+
+/* Payment methods */
+
+.payment-method {
+  max-width: 100%;
+}
+
 /* Back to Top */
 
 #back-to-top-btn {
@@ -738,27 +753,84 @@ content {
   animation: smoothScroll 0.5s ease-in-out forwards;
 }
 
-
-.footer-distributed{
-  font: bold 14px sans-serif;
+@media (max-width:991px) {
+  .site-footer [class^=col-] {
+    margin-bottom: 30px
+  }
 }
 
-.footer-distributed .footer-left,
-.footer-distributed .footer-center,
-.footer-distributed .footer-right{
-  display: block;
-  width: 100%;
-  margin-bottom: 40px;
+@media (max-width:767px) {
+  .site-footer {
+    padding-bottom: 0
+  }
+
+  .site-footer .copyright-text,
+  .site-footer .social-icons {
+    text-align: center
+  }
+}
+
+.social-icons {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none
+}
+
+.social-icons li {
+  display: inline-block;
+  margin-bottom: 4px
+}
+
+.social-icons li.title {
+  margin-right: 15px;
+  text-transform: uppercase;
+  color: #96a2b2;
+  font-weight: 700;
+  font-size: 13px
+}
+
+.social-icons a {
+  background-color: #eceeef;
+  color: #818a91;
+  font-size: 16px;
+  display: inline-block;
+  line-height: 44px;
+  width: 44px;
+  height: 44px;
   text-align: center;
+  margin-right: 8px;
+  border-radius: 100%;
+  -webkit-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear
 }
 
-.footer-distributed .footer-center i{
-  margin-left: 0;
+.social-icons a:active,
+.social-icons a:focus,
+.social-icons a:hover {
+  color: #fff;
+  background-color: #29aafe
 }
 
-section,
-footer {
-  width: 100%;
-  margin: 0 auto;
+.social-icons.size-sm a {
+  line-height: 34px;
+  height: 34px;
+  width: 34px;
+  font-size: 14px
+}
 
+.social-icons a.facebook:hover {
+  background-color: #3b5998
+}
+
+.social-icons a.twitter:hover {
+  background-color: #00aced
+}
+
+.social-icons a.linkedin:hover {
+  background-color: #007bb6
+}
+
+.social-icons a.dribbble:hover {
+  background-color: #ea4c89
 }
